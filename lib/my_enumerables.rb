@@ -9,6 +9,15 @@ module Enumerable
     end
   end
 
+  def my_select
+    arr =[]
+    self.each do |element|
+      arr << element if yield(element)
+    end
+
+    arr
+  end
+
 
 
 end
