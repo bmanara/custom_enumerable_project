@@ -62,8 +62,14 @@ module Enumerable
     arr
   end
 
+  def my_inject(value)
+    result = value
+    self.each do |elem|
+      result = yield(result, elem)
+    end
 
-
+    result
+  end
 
 end
 
