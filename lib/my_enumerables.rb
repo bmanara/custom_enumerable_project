@@ -18,6 +18,15 @@ module Enumerable
     arr
   end
 
+  def my_all?
+    result = true
+    self.each do |element|
+      result = result && yield(element)
+      return result if !result
+    end
+
+    result
+  end
 
 
 end
