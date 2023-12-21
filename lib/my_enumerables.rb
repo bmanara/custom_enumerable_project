@@ -38,6 +38,22 @@ module Enumerable
     result
   end
 
+  def my_count
+    count = 0
+    if !block_given?
+      self.each do |elem|
+        count += 1
+      end
+    else
+      self.each do |elem|
+        count += 1 if yield(elem)
+      end
+    end
+
+    count
+  end
+
+
 
 end
 
