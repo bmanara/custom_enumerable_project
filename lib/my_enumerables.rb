@@ -28,6 +28,16 @@ module Enumerable
     result
   end
 
+  def my_none?
+    result = true
+    self.each do |element|
+      result = result && !yield(element)
+      return result if !result
+    end
+
+    result
+  end
+
 
 end
 
